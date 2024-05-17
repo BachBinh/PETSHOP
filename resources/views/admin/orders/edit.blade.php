@@ -1,6 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
-<h1 class="h3 mb-3"><strong>Sửa đơn hàng</strong></h1>
+<h1 class="h3 mb-3"><strong>Edit orders:</strong></h1>
 
     <div class="err">
         @if($errors->any())
@@ -14,10 +14,10 @@
 
     @foreach ($showusers as $showuser)
         <div class="mb-3">
-        <div style="font-size: 18px;"><strong>Khách hàng:</strong> {{$showuser->hoten}}</div>
+        <div style="font-size: 18px;"><strong>Customer:</strong> {{$showuser->hoten}}</div>
         <div style="font-size: 18px;"><strong>Email:</strong> {{$showuser->email}}</div>
-        <div style="font-size: 18px;"><strong>Số điện thoại:</strong> {{$showuser->sdt}}</div>
-        <div style="font-size: 18px;"><strong>Địa chỉ:</strong> {{$showuser->diachi}}</div>
+        <div style="font-size: 18px;"><strong>Phone:</strong> {{$showuser->sdt}}</div>
+        <div style="font-size: 18px;"><strong>Address:</strong> {{$showuser->diachi}}</div>
         </div>
     @endforeach
 
@@ -27,44 +27,44 @@
         @method('put')
 
         <div class="mb-3">
-            <label for="id_dathang" class="form-label">ID đơn hàng</label>
+            <label for="id_dathang" class="form-label">ID order</label>
             <input type="text" class="form-control" id="id_dathang" name="id_dathang" value="{{$order->id_dathang}}" disabled>
         </div>
 
         <div class="mb-3">
-            <label for="ngaydathang" class="form-label">Ngày đặt</label>
+            <label for="ngaydathang" class="form-label">Order date</label>
             <input type="text" class="form-control" id="ngaydathang" name="ngaydathang" value="{{$order->ngaydathang}}" disabled>
         </div>
 
         <div class="mb-3">
-            <label for="ngaygiaohang" class="form-label">Ngày giao</label>
+            <label for="ngaygiaohang" class="form-label">Delivery date</label>
             @if($order->ngaygiaohang)
                 <input type="date" class="form-control" id="ngaygiaohang" name="ngaygiaohang" value="{{ date('Y-m-d', strtotime($order->ngaygiaohang)) }}">
             @else
                 <input type="date" class="form-control" id="ngaygiaohang" name="ngaygiaohang" value="{{ date('Y-m-d') }}">
             @endif
-        </div>        
+        </div>
 
         <div class="mb-3">
-            <label for="phuongthucthanhtoan" class="form-label">Phương thức thanh toán</label>
+            <label for="phuongthucthanhtoan" class="form-label">Payment method</label>
             <input type="text" class="form-control" id="phuongthucthanhtoan" name="phuongthucthanhtoan" value="{{$order->phuongthucthanhtoan}}" disabled>
         </div>
 
         <div class="mb-3">
-            <label for="diachigiaohang" class="form-label">Địa chỉ giao hàng</label>
+            <label for="diachigiaohang" class="form-label">Delivery address</label>
             <input type="text" class="form-control" id="diachigiaohang" name="diachigiaohang" value="{{$order->diachigiaohang}}" required>
         </div>
 
         <div class="mb-3">
             <label for="trangthai" class="form-label">Trạng thái</label>
             <select class="form-select" id="trangthai" name="trangthai" required>
-                <option value="đang xử lý" {{ $order->trangthai == 'đang xử lý' ? 'selected' : '' }}>Đang xử lý</option>
-                <option value="chờ lấy hàng" {{ $order->trangthai == 'chờ lấy hàng' ? 'selected' : '' }}>Chờ lấy hàng</option>
-                <option value="đang giao hàng" {{ $order->trangthai == 'đang giao hàng' ? 'selected' : '' }}>Đang giao hàng</option>
-                <option value="giao thành công" {{ $order->trangthai == 'giao thành công' ? 'selected' : '' }}>Giao thành công</option>
+                <option value="đang xử lý" {{ $order->trangthai == 'đang xử lý' ? 'selected' : '' }}>Processing</option>
+                <option value="chờ lấy hàng" {{ $order->trangthai == 'chờ lấy hàng' ? 'selected' : '' }}>Waiting for delivery</option>
+                <option value="đang giao hàng" {{ $order->trangthai == 'đang giao hàng' ? 'selected' : '' }}>Delivering</option>
+                <option value="giao thành công" {{ $order->trangthai == 'giao thành công' ? 'selected' : '' }}>Delivered successfully</option>
             </select>
         </div>
-        
+
         <div class="mb-3">
             <table class="table table-hover my-0">
                 <thead>

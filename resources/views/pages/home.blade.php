@@ -604,7 +604,7 @@
             @endforeach
         </div>
         <center style="margin-top: 30px;">
-            <a href="{{route('viewAll')}}" class="btn text-white" style="background: #ff4500;">See more</a>
+            <a href="{{route('viewAll')}}" class="btn text-white" style="background: #fac;">See more</a>
         </center>
     </div>
 

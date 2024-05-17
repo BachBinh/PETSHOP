@@ -1,6 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
-<h1 class="h3 mb-3"><strong>Sửa danh mục</strong></h1>
+<h1 class="h3 mb-3"><strong>Edit category</strong></h1>
 
     <div class="err">
         @if($errors->any())
@@ -18,13 +18,13 @@
         @method('put')
 
         <div class="mb-3">
-            <label for="name" class="form-label">Tên danh mục:</label>
+            <label for="name" class="form-label">Category' name:</label>
             <input type="text" class="form-control" id="name" name="ten_danhmuc" value="{{$danhmuc->ten_danhmuc}}" required>
         </div>
 
         <div>
             <input type="submit" class="btn btn-primary" value="Update">
-            &nbsp;<a class="btn btn-secondary" href="{{URL::to('/admin/danhmuc')}}">Hủy</a>
+            &nbsp;<a class="btn btn-secondary" href="{{URL::to('/admin/danhmuc')}}">Cancle</a>
         </div>
     </form>
 

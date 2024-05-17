@@ -1,10 +1,10 @@
 @extends('layout')
 @section('content')
-<!-- Tất cả sản phẩm -->
+<!-- ALL PRODUCTS -->
 <div class="body">
 
     <div class="body__mainTitle">
-        <h2>TẤT CẢ SẢN PHẨM</h2>
+        <h2>ALL PRODUCTS</h2>
     </div>
 
     <div>

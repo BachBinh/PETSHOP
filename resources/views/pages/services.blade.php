@@ -45,7 +45,7 @@
                 </div>
 
             </h1>
-            <img src="{{ asset('frontend/img/banner_ser_6.jpeg')}}" alt="">
+            <img src="{{ asset('frontend/img/banner_ser_8.png')}}" alt="">
         </div>
     </div>
 
@@ -57,7 +57,7 @@
 
         <div class="modal-header">
             <button class="modal-close modal-toggle btn fa fa-times" style="outline: none;"></button>
-            <h2 class="modal-heading">Xem thêm</h2>
+            <h2 class="modal-heading">See more</h2>
         </div>
 
         <style>
@@ -76,9 +76,9 @@
                 <h3 class="h1-title">
                 PET STORE: Your One-Stop Shop for Premium Pet Products and Services!
                 </h3>
-                <p>"With the aspiration of becoming a second home for pets, Petstore offers a comprehensive range of essential services and products tailored to meet the needs of every beloved furry friend."</p>
+                <p>With the aspiration of becoming a second home for pets, Petstore offers a wide range of essential services and products to meet the needs of every beloved furry friend. From high-quality pet food and engaging toys to professional grooming and veterinary care, Petstore ensures comprehensive well-being for pets. Our dedicated team is committed to providing a welcoming and supportive environment, making Petstore a trusted place for your pets.</p>
 
-                <button class="btn btn-danger mt-5 modal-toggle">See more!</button>
+                <!-- <button class="btn btn-danger mt-5 modal-toggle">See more!</button> -->
 
             </div>
         </div>
@@ -86,7 +86,7 @@
 
     <div class="row">
         <div class="col-lg-4" style="padding: 15px!important;">
-            <div style="background-color: #2885BA" class="service-list__content-box">
+            <div style="background-color: #6895ed" class="service-list__content-box">
                 <img src="{{ asset('frontend/img/banner_ser_1.jpeg')}}" alt="">
                 <h3 class="h1-title">
                     1. PET STORE - A PLACE FOR QUALITY PET CARE!
@@ -99,8 +99,8 @@
             </div>
         </div>
         <div class="col-lg-4" style="padding: 15px!important;">
-            <div style="background-color: #B56256" class="service-list__content-box">
-                <img src="{{ asset('frontend/img/banner_ser_2.jpeg')}}" alt="">
+            <div style="background-color: #6895ed" class="service-list__content-box">
+                <img src="{{ asset('frontend/img/banner_ser_2.jpg')}}" alt="">
                 <h3 class="h1-title">
                     2. PET STORE - WHERE TO SUPPLY THE BEST QUALITY FOOD, CLEANING SAND,...!
                 </h3>
@@ -114,7 +114,7 @@
             </div>
         </div>
         <div class="col-lg-4" style="padding: 15px!important;">
-            <div style="background-color: #5C9CCA" class="service-list__content-box">
+            <div style="background-color: #6895ed" class="service-list__content-box">
                 <img src="{{ asset('frontend/img/banner_ser_3.jpeg')}}" alt="">
                 <h3 class="h1-title">
                     3. PROVIDING THE BEST QUALITY SPA, BATHING,... SERVICES!

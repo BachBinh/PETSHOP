@@ -80,14 +80,14 @@
 
         <!--Mô tả sản phẩm-->
         <div class="body__mainTitle">
-            <h2>MÔ TẢ SẢN PHẨM</h2>
+            <h2>PRODUCT DESCRIPTION</h2>
         </div>
             {{$sanpham->mota}}
         <hr />
 
         <!--Bình luận sản phẩm-->
         <div class="body__mainTitle">
-            <h2>BÌNH LUẬN</h2>
+            <h2>COMMENT</h2>
         </div>
         <div>
             <div class="d-flex justify-content-between align-items-center">
@@ -106,7 +106,7 @@
         </div>
 
         <div class="d-flex justify-content-between align-items-center">
-            <div>Nội dung</div>
+            <div>Content</div>
             <div class="d-flex align-items-center">
                 <input type="hidden" id="rating" name="rating" value="0" />
             </div>
@@ -128,7 +128,7 @@
     <hr>
         <!-- Sản phẩm ngẫu nhiên -->
         <div class="body__mainTitle">
-            <h2>CÓ THỂ BẠN CŨNG THÍCH</h2>
+            <h2>YOU MAY ALSO LIKE</h2>
         </div>
         <div class="row">
             @foreach($randoms as $random)
@@ -142,7 +142,7 @@
                             <div>
                                 @if($random->giamgia)
                                     -{{$random->giamgia}}%
-                                @else Mới
+                                @else New
                                 @endif
                             </div>
                         </div>
@@ -151,7 +151,6 @@
                             <div class="product__title">
                                 {{$random->tensp}}
                             </div>
-
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
