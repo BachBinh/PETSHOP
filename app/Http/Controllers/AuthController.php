@@ -24,7 +24,7 @@ class AuthController extends Controller
         $kh->sdt = $request->phone;
         $kh->id_phanquyen = 2;
         $kh->save();
-        return back()->with('thongbao', 'Đăng ký tài khoản thành công');
+        return back()->with('thongbao', 'Account registration successful');
     }
 
     public function loginPost(Request $request){
@@ -34,10 +34,10 @@ class AuthController extends Controller
         ];
 
         if(Auth::attempt($credetials)){
-            return redirect('/')->with('thongbao', 'Đăng nhập thành công');
+            return redirect('/')->with('thongbao', 'Logged in successfully');
         }
 
-        return back()->with('error', 'Sai tên tài khoản hoặc mật khẩu');
+        return back()->with('error', 'Wrong account name or password');
     }
 
     public function logout(){

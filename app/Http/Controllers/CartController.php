@@ -19,7 +19,7 @@ class CartController extends Controller
         $products = Sanpham::all();
         return view('products', compact('products'));
     }
- 
+
     public function cart()
     {
         return view('pages.cart');
@@ -27,9 +27,9 @@ class CartController extends Controller
     public function addToCart($id)
     {
         $product = Sanpham::findOrFail($id);
- 
+
         $cart = session()->get('cart', []);
- 
+
         if(isset($cart[$id])) {
             $cart[$id]['quantity']++;
         }  else {
@@ -43,16 +43,16 @@ class CartController extends Controller
                 "quantity" => 1
             ];
         }
- 
+
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Thêm vào giỏ hàng thành công!');
+        return redirect()->back()->with('success', 'Add to cart successfully!');
     }
     public function addGoToCart($id)
     {
         $product = Sanpham::findOrFail($id);
- 
+
         $cart = session()->get('cart', []);
- 
+
         if(isset($cart[$id])) {
             $cart[$id]['quantity']++;
         }  else {
@@ -66,21 +66,21 @@ class CartController extends Controller
                 "quantity" => 1
             ];
         }
- 
+
         session()->put('cart', $cart);
         return redirect('/cart');
     }
- 
+
     public function update(Request $request)
     {
         if($request->id && $request->quantity){
             $cart = session()->get('cart');
             $cart[$request->id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
-            session()->flash('success', 'Cập nhật giỏ hàng thành công!');
+            session()->flash('success', 'Cart updated successfully!');
         }
     }
- 
+
     public function remove(Request $request)
     {
         if($request->id) {
@@ -89,7 +89,7 @@ class CartController extends Controller
                 unset($cart[$request->id]);
                 session()->put('cart', $cart);
             }
-            session()->flash('success', 'Xóa sản phẩm trong giỏ hàng thành công');
+            session()->flash('success', 'Successfully deleted products from the shopping cart');
         }
     }
 
@@ -130,17 +130,17 @@ class CartController extends Controller
         foreach(session('cart') as $item){
             $validatedDataCTDatHang['tensp'] = $item['tensp'];
             $validatedDataCTDatHang['soluong'] = $item['quantity'];
-            $validatedDataCTDatHang['giamgia'] = $item['giamgia'];   
-            $validatedDataCTDatHang['giatien'] = $item['giasp'];   
-            $validatedDataCTDatHang['giakhuyenmai'] = $item['giakhuyenmai'];   
-            $validatedDataCTDatHang['id_sanpham'] = $item['id_sanpham'];   
-            $validatedDataCTDatHang['id_dathang'] = $dathangCre->id_dathang;            
-        
-            $validatedDataCTDatHang['id_kh'] = Auth::user()->id_kh; 
-        
+            $validatedDataCTDatHang['giamgia'] = $item['giamgia'];
+            $validatedDataCTDatHang['giatien'] = $item['giasp'];
+            $validatedDataCTDatHang['giakhuyenmai'] = $item['giakhuyenmai'];
+            $validatedDataCTDatHang['id_sanpham'] = $item['id_sanpham'];
+            $validatedDataCTDatHang['id_dathang'] = $dathangCre->id_dathang;
+
+            $validatedDataCTDatHang['id_kh'] = Auth::user()->id_kh;
+
             ChitietDonhang::create($validatedDataCTDatHang);
         }
-        
+
         $request->session()->forget('cart');
 
         return view('pages.thongbaodathang');
@@ -149,7 +149,7 @@ class CartController extends Controller
     public function thongbaodathang(Request $request){
         if ($request->has('vnp_ResponseCode') && $request->has('vnp_TransactionNo')) {
             $responseCode = $request->input('vnp_ResponseCode');
-    
+
             //if the payment successful
             if ($responseCode == '00') {
                 return view('pages.thongbaodathang');
@@ -161,11 +161,11 @@ class CartController extends Controller
             // Invalid request
             return redirect('/cart');
         }
-        
+
     }
 
     public function vnpay(Request $request){
-        $vnp_TmnCode = "GHHNT2HB"; //Mã website tại VNPAY 
+        $vnp_TmnCode = "GHHNT2HB"; //Mã website tại VNPAY
         $vnp_HashSecret = "BAGAOHAPRHKQZASKQZASVPRSAKPXNYXS"; //Chuỗi bí mật
 
         $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";

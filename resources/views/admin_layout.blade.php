@@ -128,7 +128,7 @@
                   </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
-                  <a class="dropdown-item" href="pages-profile.html"
+                  <!-- <a class="dropdown-item" href="pages-profile.html"
                     ><i class="align-middle me-1" data-feather="user"></i>
                     Profile</a
                   >
@@ -143,7 +143,7 @@
                       data-feather="help-circle"
                     ></i>
                     Help Center</a
-                  >
+                  > -->
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{{ URL::to('/admin_logout')}}"><i class="align-middle me-2" data-feather="log-out"></i> <span class="align-middle">log-out</span></a>
                 </div>
@@ -167,19 +167,19 @@
                     class="text-muted"
                     href="https://Admin Dashboard.io/"
                     target="_blank"
-                    ><strong>Admin Dashboard</strong></a
+                    ><strong>Admin PetStore By BINHNYVY</strong></a
                   >
                   -
-                  <a
+                  <!-- <a
                     class="text-muted"
                     href="https://Admin Dashboard.io/"
                     target="_blank"
                     ><strong>Bootstrap Admin Template</strong></a
-                  >
+                  > -->
                   &copy;
                 </p>
               </div>
-              <div class="col-6 text-end">
+              <!-- <div class="col-6 text-end">
                 <ul class="list-inline">
                   <li class="list-inline-item">
                     <a
@@ -214,7 +214,7 @@
                     >
                   </li>
                 </ul>
-              </div>
+              </div> -->
             </div>
           </div>
         </footer>

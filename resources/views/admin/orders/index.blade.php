@@ -1,7 +1,7 @@
 @extends('admin_layout')
 @section('admin_content')
 
-<h1 class="h3 mb-3"><strong>Danh sách đơn hàng</strong></h1>
+<h1 class="h3 mb-3"><strong>List order</strong></h1>
 
 <div class="">
   @if(session()->has('success'))

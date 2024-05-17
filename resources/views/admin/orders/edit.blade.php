@@ -56,7 +56,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="trangthai" class="form-label">Trạng thái</label>
+            <label for="trangthai" class="form-label">Status</label>
             <select class="form-select" id="trangthai" name="trangthai" required>
                 <option value="đang xử lý" {{ $order->trangthai == 'đang xử lý' ? 'selected' : '' }}>Processing</option>
                 <option value="chờ lấy hàng" {{ $order->trangthai == 'chờ lấy hàng' ? 'selected' : '' }}>Waiting for delivery</option>
@@ -68,12 +68,12 @@
         <div class="mb-3">
             <table class="table table-hover my-0">
                 <thead>
-                    <th>Tên sản phẩm</th>
-                    <th>Số lượng</th>
-                    <th>Giá gốc</th>
-                    <th>Giảm giá</th>
-                    <th>Giá khuyến mại</th>
-                    <th>tổng tiền</th>
+                    <th>Product's Name</th>
+                    <th>Quantity</th>
+                    <th>Cost</th>
+                    <th>Discount</th>
+                    <th>Promotional price</th>
+                    <th>Total price</th>
                 </thead>
                 <tbody>
                     @php
@@ -100,7 +100,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="tongiten" class="form-label">Tiền ước tính</label>
+            <label for="tongiten" class="form-label">Estimated money</label>
             <input type="text" class="form-control" id="tongiten" name="tongiten" value="{{$totalPrice}}" disabled>
         </div>
 
