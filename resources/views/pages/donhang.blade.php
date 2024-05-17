@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="body">
-    <h1 class="h3 mb-3"><strong>Danh sách đơn hàng</strong></h1>
+    <h1 class="h3 mb-3"><strong>List Order</strong></h1>
 
 <div class="">
   @if(session()->has('success'))
@@ -18,11 +18,11 @@
     <thead>
       <tr>
         <th>ID</th>
-        <th>Phương thức tt</th>
-        <th>Ngày đặt</th>
-        <th>Ngày giao dự kiến</th>
-        <th>Trạng thái</th>
-        <th>Địa chỉ giao hàng</th>
+        <th>Payment Method</th>
+        <th>Order Date</th>
+        <th>Estimated delivery date</th>
+        <th>Status</th>
+        <th>Delivery Address</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -46,20 +46,20 @@
             <td></td>
           @endif
         <td>
-          @if($order->trangthai == 'đang xử lý')
+          @if($order->trangthai == 'processing')
             <span class="badge bg-primary text-white">{{$order->trangthai}}</span>
-          @elseif ($order->trangthai == 'chờ lấy hàng')
+          @elseif ($order->trangthai == 'wating for delivery')
             <span class="badge bg-warning text-white">{{$order->trangthai}}</span>
-          @elseif ($order->trangthai == 'đang giao hàng')
+          @elseif ($order->trangthai == 'delivering')
             <span class="badge bg-success text-white">{{$order->trangthai}}</span>
-          @elseif ($order->trangthai == 'giao thành công')
+          @elseif ($order->trangthai == 'delivered successfully')
             <span class="badge bg-success text-white">{{$order->trangthai}}</span>
           @else
             <span class="badge bg-danger text-white">{{$order->trangthai}}</span>
           @endif
         </td>
         <td class="d-none d-md-table-cell">{{$order->diachigiaohang}}</td>
-        <td class="d-none d-md-table-cell"><a href="{{ route('donhang.edit', ['id' => $order->id_dathang]) }}" class="btn btn-primary">Xem đơn hàng</a></td>
+        <td class="d-none d-md-table-cell"><a href="{{ route('donhang.edit', ['id' => $order->id_dathang]) }}" class="btn btn-primary">View orders</a></td>
       </tr>
       <tr>
       @endforeach

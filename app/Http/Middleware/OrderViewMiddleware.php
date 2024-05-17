@@ -30,6 +30,6 @@ class OrderViewMiddleware
         else {
             return redirect('/');
         }
-       
+
     }
 }

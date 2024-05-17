@@ -23,7 +23,7 @@ class AdminRepository implements IAdminRepository{
             return redirect('/dashboard');
         }
 
-        return back()->with('thongbao', 'Sai tên tài khoản hoặc mật khẩu');
+        return back()->with('thongbao', 'Wrong account name or password');
 
     }
     public function logOut(){
@@ -57,7 +57,7 @@ class AdminRepository implements IAdminRepository{
             ->where('dathang.trangthai', 'giao thành công')
             ->sum(DB::raw('chitiet_donhang.giakhuyenmai * chitiet_donhang.soluong'));
     }
-    
+
     public function totalsSaleProducts()
     {
         return DB::table('chitiet_donhang')

@@ -20,7 +20,7 @@ class AdminLoginMiddleware
         if (Auth::check() && Auth::user()->id_phanquyen == 1) {
             return $next($request);
         } else {
-            return redirect('/admin')->with('thongbao', 'Không có quyền truy cập.');
+            return redirect('/admin')->with('thongbao', 'Not have access.');
         }
     }
 }

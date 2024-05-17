@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="body">
-    <h1 class="h3 mb-3 bg-light p-3"><strong>Đơn hàng đã đặt</strong></h1>
+    <h1 class="h3 mb-3 bg-light p-3"><strong>Order placed</strong></h1>
 
     <div class="err">
         @if($errors->any())
@@ -15,15 +15,15 @@
 
     @foreach ($showusers as $showuser)
         <div class="mb-3 bg-light p-3 my-3">
-            <h4>Thông tin khách hàng</h4>
+            <h4>Customer information</h4>
             <div class="d-flex">
                 <div class="mr-4">
-                    <div style="font-size: 18px;"><strong>Khách hàng:</strong> {{$showuser->hoten}}</div>
+                    <div style="font-size: 18px;"><strong>Customer:</strong> {{$showuser->hoten}}</div>
                     <div style="font-size: 18px;"><strong>Email:</strong> {{$showuser->email}}</div>
                 </div>
                 <div class="">
-                    <div style="font-size: 18px;"><strong>Số điện thoại:</strong> {{$showuser->sdt}}</div>
-                    <div style="font-size: 18px;"><strong>Địa chỉ:</strong> {{$showuser->diachi}}</div>
+                    <div style="font-size: 18px;"><strong>Phone:</strong> {{$showuser->sdt}}</div>
+                    <div style="font-size: 18px;"><strong>Address:</strong> {{$showuser->diachi}}</div>
                 </div>
             </div>
         </div>
@@ -33,15 +33,15 @@
         <table class="table table-hover my-0">
             <tbody>
                 <tr>
-                    <th>ID đơn hàng</th>
+                    <th>ID Order</th>
                     <td>{{$order->id_dathang}}</td>
                 </tr>
                 <tr>
-                    <th>Ngày đặt</th>
+                    <th>Order Date</th>
                     <td>{{$order->ngaydathang}}</td>
                 </tr>
                 <tr>
-                    <th>Ngày giao</th>
+                    <th>Delivery Order</th>
                     <td>
                         @if($order->ngaygiaohang)
                             {{ date('Y-m-d', strtotime($order->ngaygiaohang)) }}
@@ -51,7 +51,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Phương thức thanh toán</th>
+                    <th>Payment methods</th>
                     @if ($order->phuongthucthanhtoan == "COD")
                         <td class="d-none d-xl-table-cell"><div class="badge bg-secondary text-white">{{$order->phuongthucthanhtoan}}</div></td>
                     @elseif ($order->phuongthucthanhtoan == "VNPAY")
@@ -61,39 +61,39 @@
                     @endif
                 </tr>
                 <tr>
-                    <th>Địa chỉ giao hàng</th>
+                    <th>Delivery address</th>
                     <td>{{$order->diachigiaohang}}</td>
                 </tr>
                 <tr>
-                    <th>Trạng thái</th>
+                    <th>Status</th>
                     <td>
-                        @if($order->trangthai == 'đang xử lý')
+                        @if($order->trangthai == 'Processing')
                         <span class="badge bg-primary text-white">{{$order->trangthai}}</span>
-                      @elseif ($order->trangthai == 'chờ lấy hàng')
+                      @elseif ($order->trangthai == 'waiting for delivery')
                         <span class="badge bg-warning text-white">{{$order->trangthai}}</span>
-                      @elseif ($order->trangthai == 'đang giao hàng')
+                      @elseif ($order->trangthai == 'delivering')
                         <span class="badge bg-success text-white">{{$order->trangthai}}</span>
-                      @elseif ($order->trangthai == 'giao thành công')  
+                      @elseif ($order->trangthai == 'delivered successfully')
                         <span class="badge bg-success text-white">{{$order->trangthai}}</span>
                       @else
                         <span class="badge bg-danger text-white">{{$order->trangthai}}</span>
-                      @endif    
+                      @endif
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-    
-    
+
+
     <div class="mb-3">
         <table class="table table-hover my-0">
             <thead>
-                <th>Tên sản phẩm</th>
-                <th>Số lượng</th>
-                <th>Giá gốc</th>
-                <th>Giảm giá</th>
-                <th>Giá khuyến mại</th>
-                <th>tổng tiền</th>
+                <th>Product's name</th>
+                <th>Quantity</th>
+                <th>Cost</th>
+                <th>Discount</th>
+                <th>Promotional price</th>
+                <th>Total Price</th>
             </thead>
             <tbody>
                 @php
@@ -120,9 +120,9 @@
     </div>
 
     <h3 class="d-flex justify-content-end align-items-center">
-        Tổng thanh toán &nbsp;<div class="text-danger" style="font-size: 40px;">{{ number_format($totalPrice, 0, ',', '.') }}đ</div>
+        Total payment &nbsp;<div class="text-danger" style="font-size: 40px;">{{ number_format($totalPrice, 0, ',', '.') }}đ</div>
     </h3>
 
-    &nbsp;<a class="btn btn-secondary" href="{{URL::to('/donhang')}}">Quay lại</a>
+    &nbsp;<a class="btn btn-secondary" href="{{URL::to('/donhang')}}">Return</a>
 </div>
 @endsection
