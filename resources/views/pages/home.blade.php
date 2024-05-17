@@ -7,13 +7,16 @@
 
     <div class="post-wrapper">
         <div class="post">
-            <img src="{{ asset('frontend/img/BG-1.jpg')}}" alt="">
+            <img src="{{ asset('frontend/img/GARA7.webp')}}" alt="">
         </div>
         <div class="post">
-            <img src="{{ asset('frontend/img/BG-2.jpg')}}" alt="">
+            <img src="{{ asset('frontend/img/BAGR1.jpg')}}" alt="">
         </div>
         <div class="post">
-            <img src="{{ asset('frontend/img/BG-3.jpg')}}" alt="">
+            <img src="{{ asset('frontend/img/BAGR4.webp')}}" alt="">
+        </div>
+        <div class="post">
+            <img src="{{ asset('frontend/img/BAGR5.webp')}}" alt="">
         </div>
     </div>
 
@@ -262,7 +265,7 @@
 
                 </a>
             </div>
-            
+
         </div>
     </div>
 </div>
