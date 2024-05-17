@@ -9,12 +9,6 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function index(){
-        return view('pages.login');
-    }
-    public function register(){
-        return view('pages.register');
-    }
     public function registerPost(Request $request){
         $kh = new Khachhang();
         $kh->hoten = $request->name;
@@ -24,24 +18,24 @@ class AuthController extends Controller
         $kh->sdt = $request->phone;
         $kh->id_phanquyen = 2;
         $kh->save();
-        return back()->with('thongbao', 'Account registration successful');
+        return back()->with('thongbao', 'Đăng ký tài khoản thành công');
     }
 
     public function loginPost(Request $request){
-        $credetials = [
+        $credentials = [
             'email' => $request->email,
             'password' => $request->password
         ];
 
-        if(Auth::attempt($credetials)){
-            return redirect('/')->with('thongbao', 'Logged in successfully');
+        if (Auth::attempt($credentials)) {
+            return redirect('/')->with('thongbao', 'Đăng nhập thành công');
         }
 
-        return back()->with('error', 'Wrong account name or password');
+        return back()->with('error', 'Sai tên tài khoản hoặc mật khẩu');
     }
 
     public function logout(){
         Auth::logout();
-        return redirect('/');
+        return response()->json(['message' => 'Logout successful'], 200);
     }
 }

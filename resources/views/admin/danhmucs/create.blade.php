@@ -18,9 +18,9 @@
             <label for="danhmuc" class="form-label">Category' name:</label>
             <input type="text" class="form-control" id="danhmuc" name="ten_danhmuc" required>
         </div>
-
-        <button type="submit" class="btn btn-primary">Send</button>
-        &nbsp;<a class="btn btn-secondary" href="{{URL::to('/admin/danhmuc')}}">Cancle</a>
+    
+        <button type="submit" class="btn btn-primary">Gửi</button>
+        &nbsp;<a class="btn btn-secondary" href="{{URL::to('/admin/danhmuc')}}">Hủy</a>
     </form>
 
 @endsection

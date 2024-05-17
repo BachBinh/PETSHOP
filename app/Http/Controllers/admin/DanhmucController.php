@@ -1,61 +1,72 @@
 <?php
 
 namespace App\Http\Controllers\admin;
+
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
-use App\Models\Danhmuc;
-
 use App\Repositories\IDanhmucRepository;
 
 class DanhmucController extends Controller
 {
-
     private $DanhmucRepository;
 
     public function __construct(IDanhmucRepository $DanhmucRepository) {
         $this->DanhmucRepository = $DanhmucRepository;
     }
 
-    public function index(){
-        $Danhmucs = $this->DanhmucRepository->allDanhmuc();
-
-        return view('admin.danhmucs.index', ['Danhmucs' => $Danhmucs]);
+    // GET /api/danhmucs
+    public function index() {
+        $danhmucs = $this->DanhmucRepository->allDanhmuc();
+        return view('admin.danhmucs.index', ['danhmucs' => $danhmucs]);
     }
 
-    public function create(){
-        return view('admin.danhmucs.create');
-    }
-
-    public function store(Request $request){
-
+    // POST /api/danhmucs
+    public function store(Request $request) {
         $validatedData = $request->validate([
             'ten_danhmuc' => 'required',
         ]);
 
-        $this->DanhmucRepository->storeDanhmuc($validatedData);
+        $danhmuc = $this->DanhmucRepository->storeDanhmuc($validatedData);
 
-        return redirect()->route('danhmuc.index');
+        return response()->json(['message' => 'Danh mục được tạo thành công', 'danhmuc' => $danhmuc], 201);
     }
 
-    public function edit($id){
+    // GET /api/danhmucs/{id}
+    public function show($id) {
         $danhmuc = $this->DanhmucRepository->findDanhmuc($id);
-        return view('admin.danhmucs.edit', ['danhmuc' => $danhmuc]);
+
+        if (!$danhmuc) {
+            return response()->json(['message' => 'Danh mục không tồn tại'], 404);
+        }
+
+        return response()->json(['danhmuc' => $danhmuc]);
     }
 
-    public function update($id, Request $request){
+    // PUT /api/danhmucs/{id}
+    public function update(Request $request, $id) {
         $validatedData = $request->validate([
             'ten_danhmuc' => 'required',
         ]);
-        $this->DanhmucRepository->updateDanhmuc($validatedData, $id);
 
-        return redirect()->route('danhmuc.index')->with('success', 'Cập nhập danh mục thành công');
+        $danhmuc = $this->DanhmucRepository->updateDanhmuc($validatedData, $id);
+
+        if (!$danhmuc) {
+            return response()->json(['message' => 'Cập nhập danh mục thất bại'], 404);
+        }
+
+        return response()->json(['message' => 'Cập nhập danh mục thành công', 'danhmuc' => $danhmuc]);
     }
 
-    public function destroy($id){
-        $this->DanhmucRepository->deleteDanhmuc($id);
+    // DELETE /api/danhmucs/{id}
+    public function destroy($id) {
+        $deleted = $this->DanhmucRepository->deleteDanhmuc($id);
 
-        return redirect()->route('danhmuc.index')->with('success', 'Xóa danh mục thành công');
+        if (!$deleted) {
+            return response()->json(['message' => 'Xóa danh mục thất bại'], 404);
+        }
+
+        return response()->json(['message' => 'Xóa danh mục thành công']);
     }
-
 }
+
+

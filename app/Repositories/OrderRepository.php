@@ -1,38 +1,56 @@
 <?php
-namespace App\Repositories;
 
+namespace App\Http\Controllers\admin;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Repositories\IOrderRepository;
-use App\Models\Dathang;
 
-use Illuminate\Support\Facades\DB;
+class OrderController extends Controller
+{
+    private $OrderRepository;
 
-class OrderRepository implements IOrderRepository{
-
-    public function allOrder(){
-        return Dathang::orderBy('id_dathang', 'desc')->paginate(2);
-    }
-    public function findOrder($id){
-        return Dathang::where('id_dathang', $id)->first();
-    }
-    public function findDetailProduct($id){
-        return DB::table('chitiet_donhang')
-            ->join('dathang', 'chitiet_donhang.id_dathang', '=', 'dathang.id_dathang')
-            ->select('chitiet_donhang.*')
-            ->where('dathang.id_dathang', $id)
-            ->get();
-    }
-    public function findUser($id){
-        return DB::table('khachhang')
-            ->join('dathang', 'khachhang.id_kh', '=', 'dathang.id_kh')
-            ->select('khachhang.*')
-            ->where('dathang.id_dathang', $id)
-            ->get();
-    }
-    public function updateOrder($data, $id){
-        $this->findOrder($id)->update($data);
+    public function __construct(IOrderRepository $OrderRepository) {
+        $this->OrderRepository = $OrderRepository;
     }
 
-    public function orderView($id){
-        return Dathang::where('id_kh', $id)->get();
+    // GET /api/orders
+    public function index() {
+        $orders = $this->OrderRepository->allOrder();
+        return view('admin.orders.index', ['orders' => $orders]);
+    }
+
+    // GET /api/orders/{id}
+    public function show($id) {
+        $order = $this->OrderRepository->findOrder($id);
+        $orderdetails = $this->OrderRepository->findDetailProduct($id);
+        $showusers = $this->OrderRepository->findUser($id);
+
+        if (!$order) {
+            return response()->json(['message' => 'Order not found'], 404);
+        }
+
+        return view('admin.orders.show', [
+            'order' => $order,
+            'orderdetails' => $orderdetails,
+            'showusers' => $showusers,
+        ]);
+    }
+
+    // PUT /api/orders/{id}
+    public function update(Request $request, $id) {
+        $validatedData = $request->validate([
+            'ngaygiaohang' => 'required',
+            'trangthai' => 'required',
+        ]);
+
+        $order = $this->OrderRepository->updateOrder($validatedData, $id);
+
+        if (!$order) {
+            return response()->json(['message' => 'Update failed, order not found'], 404);
+        }
+
+        return response()->json(['message' => 'Order updated successfully', 'order' => $order]);
     }
 }
+
