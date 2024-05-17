@@ -115,8 +115,8 @@
 
             <div class="footer__info-content">
                 <h3>Contact</h3>
-                <p>Address: 19 Nguyen Huu Tho,Tan Phong Ward, District 7, Ho Chi Minh city</p>
-                <p>Email: bachphuongbinh@gmail.com</p>
+                <p>Address: 2, Nguyen Thi Thap Street, Tan Quy Ward, District 7, Ho Chi Minh city</p>
+                <p>Email: petshop@gmail.com</p>
                 <p>Sđt: 0123456789</p>
             </div>
 

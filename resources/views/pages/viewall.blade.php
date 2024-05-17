@@ -20,7 +20,7 @@
                             <div>
                                 @if($sanpham->giamgia)
                                     -{{$sanpham->giamgia}}%
-                                @else Mới
+                                @else New
                                 @endif
                             </div>
                         </div>

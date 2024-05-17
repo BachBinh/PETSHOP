@@ -23,9 +23,9 @@
 
                 <div class="product__details-info">
                     <h3 style="margin-top: unset; line-height: unset;">{{ $sanpham->tensp }}</h3>
-                    <div class="short-des">
+                    <!-- <div class="short-des">
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam sit aliquid debitis voluptates ducimus, quasi iusto nam quaerat eius quidem.
-                    </div><hr />
+                    </div><hr /> -->
 
                     <div class="product__pride">
                         <div class="product__pride-oldPride" style="font-size: 20px; text-align: start;">
@@ -94,9 +94,9 @@
                 <div class="d-flex">
                     <img src="{{ asset('frontend/img/user.jpg')}}" width="45" height="45" style="border-radius: 50%;" />
                     <div class="pl-3">
-                        <b>Nguyen van a</b>
-                        <div style="line-height: 30px;">san pha mdung dc</div>
-                        <div>22/01/2022</div>
+                        <b>Bach Phuong Binh</b>
+                        <div style="line-height: 30px;">Good Product!</div>
+                        <div>30/04/2024</div>
                     </div>
                 </div>
 
