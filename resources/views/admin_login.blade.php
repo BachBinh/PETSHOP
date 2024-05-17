@@ -22,7 +22,7 @@
 </head>
 
 <body>
-	<main class="d-flex w-100" style="background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);">
+	<main class="d-flex w-100" style="background: url('/frontend/img/bg_login4.jpg')">
 		<div class="container d-flex flex-column">
 			<div class="row vh-100">
 				<div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 mx-auto d-table h-100">
@@ -52,7 +52,7 @@
 									<form action="{{ URL::to('/signinDashboard') }}" method="post">
 
 										{{ csrf_field() }}
-									
+
 										<div class="mb-3">
 											<label class="form-label">Email</label>
 											<input class="form-control form-control-lg" type="text" name="email" placeholder="Enter your email" />
@@ -74,7 +74,7 @@
 								</div>
 							</div>
 						</div>
-				
+
 					</div>
 				</div>
 			</div>

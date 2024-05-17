@@ -1,7 +1,7 @@
 @extends('admin_layout')
 @section('admin_content')
 
-<h1 class="h3 mb-3"><strong>Danh sách danh mục</strong></h1>
+<h1 class="h3 mb-3"><strong>Category list</strong></h1>
 
 <div class="">
   @if(session()->has('success'))
@@ -11,13 +11,13 @@
   @endif
 </div>
 
-<a class="btn btn-primary" href="{{route('danhmuc.create')}}">Thêm danh mục</a>
+<a class="btn btn-primary" href="{{route('danhmuc.create')}}">Add categories</a>
 
   <table class="table">
     <thead>
       <tr>
-        <th>Id</th>
-        <th>Tên danh mục</th>
+        <th>ID</th>
+        <th>Category' name:</th>
         <th colspan="2">Actions</th>
       </tr>
     </thead>
@@ -33,7 +33,7 @@
               @csrf
               @method('delete')
               <input type="submit" class="btn btn-danger" value="Delete"
-              onclick="return confirm('Bạn có chắc chắn muốn xóa danh mục này không?')">
+              onclick="return confirm('Are you sure you want to delete this category?')">
           </form>
         </td>
       </tr>

@@ -26,7 +26,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <link href="{{ asset('backend/css/app.css')}}" rel="stylesheet" />
     <link href="{{ asset('backend/css/style.css')}}" rel="stylesheet" />
     <link
@@ -40,64 +40,64 @@
       <nav id="sidebar" class="sidebar js-sidebar">
         <div class="sidebar-content js-simplebar">
           <a class="sidebar-brand" href="{{URL::to('/dashboard')}}">
-            <span class="align-middle">Shop thú cưng</span>
+            <span class="align-middle">Pet Shop</span>
           </a>
 
           <ul class="sidebar-nav">
-            <li class="sidebar-header">Pages</li>
-        
+            <!-- <li class="sidebar-header">Pages</li> -->
+
             <li class="sidebar-item">
                 <a class="sidebar-link" href="{{URL::to('/dashboard')}}">
                     <i class="align-middle" data-feather="sliders"></i>
                     <span class="align-middle">Dashboard</span>
                 </a>
             </li>
-        
+
             <li class="sidebar-item">
                 <a class="sidebar-link" href="{{URL::to('/admin/product')}}">
                     <i class="align-middle" data-feather="box"></i>
                     <span class="align-middle">Products</span>
                 </a>
             </li>
-        
+
             <li class="sidebar-item">
                 <a class="sidebar-link" href="{{URL::to('/admin/danhmuc')}}">
                     <i class="align-middle" data-feather="tag"></i>
                     <span class="align-middle">Categories</span>
                 </a>
             </li>
-        
+
             <li class="sidebar-item">
                 <a class="sidebar-link" href="{{URL::to('/admin/orders')}}">
                     <i class="align-middle me-2" data-feather="package"></i>
                     <span class="align-middle">Orders</span>
                 </a>
             </li>
-        
-            <li class="sidebar-header">Tools & Components</li>
-        
+
+            <!-- <li class="sidebar-header">Tools & Components</li>
+
             <li class="sidebar-item">
                 <a class="sidebar-link" href="ui-forms.html">
                     <i class="align-middle" data-feather="check-square"></i>
                     <span class="align-middle">Forms</span>
                 </a>
             </li>
-        
+
             <li class="sidebar-item">
                 <a class="sidebar-link" href="icons-feather.html">
                     <i class="align-middle" data-feather="coffee"></i>
                     <span class="align-middle">Icons</span>
                 </a>
             </li>
-        
+
             <li class="sidebar-item">
                 <a class="sidebar-link" href="ui-buttons.html">
                     <i class="align-middle" data-feather="coffee"></i>
                     <span class="align-middle">Button</span>
                 </a>
             </li>
-        </ul>
-        
+        </ul> -->
+
 
         </div>
       </nav>
@@ -119,7 +119,7 @@
                   data-bs-toggle="dropdown"
                 >
                   <img
-                    src="{{ asset('backend/img/avatars/avatar.jpg')}}"
+                    src="{{ asset('backend/img/avatars/avatars1.webp')}}"
                     class="avatar img-fluid rounded-circle me-1"
                     alt="Admin img"
                   />
@@ -128,7 +128,7 @@
                   </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
-                  <a class="dropdown-item" href="pages-profile.html"
+                  <!-- <a class="dropdown-item" href="pages-profile.html"
                     ><i class="align-middle me-1" data-feather="user"></i>
                     Profile</a
                   >
@@ -143,7 +143,7 @@
                       data-feather="help-circle"
                     ></i>
                     Help Center</a
-                  >
+                  > -->
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{{ URL::to('/admin_logout')}}"><i class="align-middle me-2" data-feather="log-out"></i> <span class="align-middle">log-out</span></a>
                 </div>
@@ -155,7 +155,7 @@
         <main class="content">
             <!--Noi dung-->
             @yield('admin_content')
-            
+
         </main>
 
         <footer class="footer">
@@ -167,19 +167,19 @@
                     class="text-muted"
                     href="https://Admin Dashboard.io/"
                     target="_blank"
-                    ><strong>Admin Dashboard</strong></a
+                    ><strong>Admin PetStore By BINHNYVY</strong></a
                   >
                   -
-                  <a
+                  <!-- <a
                     class="text-muted"
                     href="https://Admin Dashboard.io/"
                     target="_blank"
                     ><strong>Bootstrap Admin Template</strong></a
-                  >
+                  > -->
                   &copy;
                 </p>
               </div>
-              <div class="col-6 text-end">
+              <!-- <div class="col-6 text-end">
                 <ul class="list-inline">
                   <li class="list-inline-item">
                     <a
@@ -214,7 +214,7 @@
                     >
                   </li>
                 </ul>
-              </div>
+              </div> -->
             </div>
           </div>
         </footer>

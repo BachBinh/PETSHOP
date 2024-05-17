@@ -1,6 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
-<h1 class="h3 mb-3"><strong>Sửa sản phẩm</strong></h1>
+<h1 class="h3 mb-3"><strong>Edit product</strong></h1>
 
     <div class="err">
         @if($errors->any())
@@ -18,12 +18,12 @@
         @method('put')
 
         <div class="mb-3">
-            <label for="name" class="form-label">Tên sản phẩm:</label>
+            <label for="name" class="form-label">Product's Name:</label>
             <input type="text" class="form-control" id="name" name="tensp" value="{{$product->tensp}}" required>
         </div>
 
         <div class="mb-3">
-            <label for="image" class="form-label">Hình ảnh:</label>
+            <label for="image" class="form-label">Image:</label>
             <input type="file" class="form-control" id="image" name="anhsp" accept="image/*" value="{{$product->anhsp}}">
             <input type="hidden" name="anhsp1" value="{{$product->anhsp}}">
         </div>
@@ -31,27 +31,27 @@
         <div id="imagePreview" class="mb-3"><img src="{{asset($product->anhsp)}}" height="200" alt=""></div>
 
         <div class="mb-3">
-            <label for="price" class="form-label">Giá:</label>
+            <label for="price" class="form-label">Price:</label>
             <input type="number" class="form-control" id="price" name="giasp" value="{{$product->giasp}}" required>
         </div>
 
         <div class="mb-3">
-            <label for="mota" class="form-label">Mô tả:</label>
+            <label for="mota" class="form-label">Describe:</label>
             <textarea class="form-control" id="mota" name="mota" rows="3">{{$product->mota}}</textarea>
         </div>
 
         <div class="mb-3">
-            <label for="giamgia" class="form-label">Giảm giá</label>
+            <label for="giamgia" class="form-label">Discount:</label>
             <input type="number" class="form-control" id="giamgia" name="giamgia" min="0" max="100" value="{{$product->giamgia}}">
         </div>
 
         <div class="mb-3">
-            <label for="qty" class="form-label">Số lượng:</label>
+            <label for="qty" class="form-label">Quantity:</label>
             <input type="number" class="form-control" id="qty" name="soluong" value="{{$product->soluong}}" required>
         </div>
 
         <div class="mb-3">
-            <label for="" class="form-label">Danh mục:</label>
+            <label for="" class="form-label">List:</label>
             <select name="id_danhmuc" class="form-select">
                 <option value="{{$product->id_danhmuc}}" selected>{{$product->Danhmuc->ten_danhmuc}}</option>
 
@@ -73,18 +73,18 @@
         document.getElementById('image').addEventListener('change', function() {
             const file = this.files[0];
             const reader = new FileReader();
-    
+
             reader.onload = function(e) {
                 const img = document.createElement('img');
                 img.src = e.target.result;
-    
+
                 // Đặt chiều cao của hình ảnh
                 img.style.height = '200px';
-    
+
                 document.getElementById('imagePreview').innerHTML = '';
                 document.getElementById('imagePreview').appendChild(img);
             };
-    
+
             reader.readAsDataURL(file);
         });
     </script>

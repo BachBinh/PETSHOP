@@ -18,7 +18,7 @@ class AuthController extends Controller
         $kh->sdt = $request->phone;
         $kh->id_phanquyen = 2;
         $kh->save();
-        return response()->json(['message' => 'Account registration successful'], 201);
+        return back()->with('thongbao', 'Đăng ký tài khoản thành công');
     }
 
     public function loginPost(Request $request){
@@ -27,11 +27,11 @@ class AuthController extends Controller
             'password' => $request->password
         ];
 
-        if(Auth::attempt($credentials)){
-            return response()->json(['message' => 'Login is successful'], 200);
+        if (Auth::attempt($credentials)) {
+            return redirect('/')->with('thongbao', 'Đăng nhập thành công');
         }
 
-        return response()->json(['message' => 'Wrong account or password name'], 401);
+        return back()->with('error', 'Sai tên tài khoản hoặc mật khẩu');
     }
 
     public function logout(){

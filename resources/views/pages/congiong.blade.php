@@ -1,14 +1,14 @@
 @extends('layout')
 @section('content')
-<!-- Con giống -->
+<!-- Breeder -->
 <div class="body">
 
     <div class="body__mainTitle d-flex align-items-center">
-        <h2>Con giống</h2>
+        <h2>Breeder</h2>
         <b>
             <div class="d-flex justify-content-center align-items-center ml-5" style="font-size: 26px;">
-                <div id="clickDog" class="text-secondary activeColor mr-3">Chó</div>
-                <div id="clickCat" class="text-secondary mr-3">Mèo</div>
+                <div id="clickDog" class="text-secondary activeColor mr-3">Dog</div>
+                <div id="clickCat" class="text-secondary mr-3">Cat</div>
             </div>
         </b>
 
@@ -27,7 +27,7 @@
                             <div>
                                 @if($choGiong->giamgia)
                                     -{{$choGiong->giamgia}}%
-                                @else Mới
+                                @else New
                                 @endif
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                             <div>
                                 @if($meoGiong->giamgia)
                                     -{{$meoGiong->giamgia}}%
-                                @else Mới
+                                @else New
                                 @endif
                             </div>
                         </div>

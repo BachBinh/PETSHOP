@@ -130,11 +130,11 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Phương thức tt</th>
-                  <th>Ngày đặt</th>
-                  <th>Ngày giao</th>
-                  <th>Trạng thái</th>
-                  <th>Địa chỉ giao hàng</th>
+                  <th>Payment method</th>
+                  <th>Order Date</th>
+                  <th>Delivery date</th>
+                  <th>Status</th>
+                  <th>Delivery address</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -142,7 +142,7 @@
                 @foreach($getOrderView as $order)
                 <tr>
                   <td>{{$order->id_dathang}}</td>
-          
+
                   @if ($order->phuongthucthanhtoan == "COD")
                     <td class="d-none d-xl-table-cell"><div class="badge bg-secondary">{{$order->phuongthucthanhtoan}}</div></td>
                   @elseif ($order->phuongthucthanhtoan == "VNPAY")
@@ -150,7 +150,7 @@
                   @else
                   <td class="d-none d-xl-table-cell">{{$order->phuongthucthanhtoan}}</td>
                   @endif
-          
+
                   <td class="d-none d-xl-table-cell">{{$order->ngaydathang}}</td>
                     @if ($order->ngaygiaohang)
                       <td class="d-none d-xl-table-cell">{{ date('d/m/Y', strtotime($order->ngaygiaohang)) }}</td>
@@ -160,11 +160,11 @@
                   <td>
                     @if($order->trangthai == 'đang xử lý')
                       <span class="badge bg-primary">{{$order->trangthai}}</span>
-                    @elseif ($order->trangthai == 'chờ lấy hàng')
+                    @elseif ($order->trangthai == 'waiting for delivery')
                       <span class="badge bg-warning">{{$order->trangthai}}</span>
-                    @elseif ($order->trangthai == 'đang giao hàng')
+                    @elseif ($order->trangthai == 'are delivering')
                       <span class="badge bg-success">{{$order->trangthai}}</span>
-                    @elseif ($order->trangthai == 'giao thành công')
+                    @elseif ($order->trangthai == 'delivered successfully')
                       <span class="badge bg-success">{{$order->trangthai}}</span>
                     @else
                       <span class="badge bg-danger">{{$order->trangthai}}</span>
@@ -241,7 +241,7 @@
                     <canvas id="chartjs-line"></canvas>
                 </div>
             </div>
-        </div>		
+        </div>
       </div>
       <div class="col-12 col-md-6 col-xxl-3 d-flex order-1 order-xxl-1">
         <div class="card flex-fill">

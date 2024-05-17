@@ -1,27 +1,27 @@
 @extends('admin_layout')
 @section('admin_content')
 
-    <h1 class="h3 mb-3"><strong>Từ khóa đã tìm kiếm: {{ $tukhoa }}</strong></h1>
+    <h1 class="h3 mb-3"><strong>Keywords searched: {{ $tukhoa }}</strong></h1>
 
     <div class="d-flex justify-content-between">
-        <a class="btn btn-primary" href="{{route('product.create')}}">Thêm sản phẩm</a>
-      
+        <a class="btn btn-primary" href="{{route('product.create')}}">Add product</a>
+
         <form action="{{route('adminSearch')}}" method="GET" class="d-flex">
-            <input type="text" value="" placeholder="Nhập để tìm kiếm..." name="tukhoa" class="form-control" style="width: unset;" required>
+            <input type="text" value="" placeholder="Search..." name="tukhoa" class="form-control" style="width: unset;" required>
             <button class="btn btn-primary" type="submit">
-              <i class="align-middle" data-feather="search"></i> 
+              <i class="align-middle" data-feather="search"></i>
             </button>
         </form>
-      
+
       </div>
 
     <table class="table">
         <thead>
             <tr>
-            <th>Tên sp</th>
-            <th>Hình</th>
-            <th>Số lượng</th>
-            <th>giá</th>
+            <th>Product's Name</th>
+            <th>Image</th>
+            <th>Quantity</th>
+            <th>Price</th>
             <th colspan="2">Actions</th>
             </tr>
         </thead>
@@ -38,7 +38,7 @@
                     @csrf
                     @method('delete')
                     <input type="submit" class="btn btn-danger" value="Delete"
-                    onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này không?')">
+                    onclick="return confirm('Are you sure you want to delete this product?')">
                 </form>
             </td>
             </tr>

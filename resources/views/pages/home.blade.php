@@ -7,23 +7,26 @@
 
     <div class="post-wrapper">
         <div class="post">
-            <img src="{{ asset('frontend/img/BG-1.jpg')}}" alt="">
+            <img src="{{ asset('frontend/img/GARA7.webp')}}" alt="">
         </div>
         <div class="post">
-            <img src="{{ asset('frontend/img/BG-2.jpg')}}" alt="">
+            <img src="{{ asset('frontend/img/BAGR1.jpg')}}" alt="">
         </div>
         <div class="post">
-            <img src="{{ asset('frontend/img/BG-3.jpg')}}" alt="">
+            <img src="{{ asset('frontend/img/BAGR4.webp')}}" alt="">
+        </div>
+        <div class="post">
+            <img src="{{ asset('frontend/img/BAGR5.webp')}}" alt="">
         </div>
     </div>
 
 </div>
 
-<!-- Sản phẩm nổi bật -->
+<!-- Outstanding product -->
 <div class="body">
 
     <div class="body__mainTitle">
-        <h2>Sản phẩm nổi bật</h2>
+        <h2>Outstanding product</h2>
     </div>
 
     <div class="post-slider2">
@@ -43,7 +46,7 @@
                                 <div>
                                     @if($sanpham->giamgia)
                                         -{{$sanpham->giamgia}}%
-                                    @else Mới
+                                    @else New
                                     @endif
                                 </div>
                             </div>
@@ -80,50 +83,50 @@
         </div>
     </div>
 </div>
-
+<!--
 <div class="banner">
     <div class="body__mainTitle">
-        <h2>Dịch vụ của chúng tôi</h2>
+        <h2>Our services</h2>
     </div>
 
     <div class="banner-top banner-top-2 row">
         <div class="col-md-3 col-sm-6">
             <a href="#" class="banner-top-2-child" style="background-color: #5BAB7B;">
-                <div class="text-white">Pet Store thú cưng</div>
+                <div class="text-white">Pet Store </div>
             </a>
         </div>
 
         <div class="col-md-3 col-sm-6">
             <a href="#" class="banner-top-2-child" style="background-color: #5C9CCA;">
-                <div class="text-white" style="margin: 0 auto;">Pet Hotel khách sạn cho thú cưng</div>
+                <div class="text-white" style="margin: 0 auto;">Pet Hotel </div>
             </a>
         </div>
 
         <div class="col-md-3 col-sm-6">
             <a href="#" class="banner-top-2-child" style="background-color: #C67B36;">
-                <div class="text-white" style="margin: 0 auto;">Pet Grooming spa dành cho thú cưng</div>
+                <div class="text-white" style="margin: 0 auto;">Pet Grooming spa </div>
             </a>
         </div>
 
         <div class="col-md-3 col-sm-6">
             <a href="#" class="banner-top-2-child" style="background-color: #AB5D58;">
-                <div class="text-white">Sản phẩm độc quyền</div>
+                <div class="text-white">Exclusive product</div>
             </a>
         </div>
 
     </div>
-</div>
+</div> -->
 
-<!-- Sản phẩm cho chó -->
+<!-- Products for dogs -->
 <div class="body">
 
     <div class="body__mainTitle d-flex align-items-center">
-        <h2>Sản phẩm dành cho chó</h2>
+        <h2>Products for dogs</h2>
         <b>
             <div class="d-flex justify-content-center align-items-center ml-5" style="font-size: 26px;">
-                <div id="fordog" class="text-secondary activeColor mr-3">Đồ ăn</div>
-                <div id="fordog2" class="text-secondary mr-3">Phụ kiện</div>
-                <div id="fordog3" class="text-secondary">Vật dụng</div>
+                <div id="fordog" class="text-secondary activeColor mr-3">Food</div>
+                <div id="fordog2" class="text-secondary mr-3">Accessory</div>
+                <div id="fordog3" class="text-secondary">Item</div>
             </div>
         </b>
 
@@ -142,7 +145,7 @@
                             <div>
                                 @if($dogproduct->giamgia)
                                     -{{$dogproduct->giamgia}}%
-                                @else Mới
+                                @else New
                                 @endif
                             </div>
                         </div>
@@ -186,7 +189,7 @@
                             <img src="/upload/abc.png" alt="">
                         </div>
                         <div class="product__sale">
-                            <div>Mới</div>
+                            <div>New</div>
                         </div>
 
                         <div class="product__content">
@@ -230,7 +233,7 @@
                             <img src="/upload/abc.png" alt="">
                         </div>
                         <div class="product__sale">
-                            <div>Mới</div>
+                            <div>New</div>
                         </div>
 
                         <div class="product__content">
@@ -262,27 +265,27 @@
 
                 </a>
             </div>
-            
+
         </div>
     </div>
 </div>
 
-<div class="banner">
+<!-- <div class="banner">
     <div class="banner-top">
         <img src="{{ asset('frontend/img/BG-2.jpg')}}" />
     </div>
-</div>
+</div> -->
 
-<!-- Sản phẩm cho mèo -->
+<!-- Products for cats -->
 <div class="body">
 
     <div class="body__mainTitle d-flex align-items-center">
-        <h2>Sản phẩm dành cho mèo</h2>
+        <h2>Products for cats</h2>
         <b>
             <div class="d-flex justify-content-center align-items-center ml-5" style="font-size: 26px;">
-                <div id="forcat" class="text-secondary activeColor mr-3">Đồ ăn</div>
-                <div id="forcat2" class="text-secondary mr-3">Phụ kiện</div>
-                <div id="forcat3" class="text-secondary">Vật dụng</div>
+                <div id="forcat" class="text-secondary activeColor mr-3">Food</div>
+                <div id="forcat2" class="text-secondary mr-3">Accessory</div>
+                <div id="forcat3" class="text-secondary">Item</div>
             </div>
         </b>
 
@@ -301,7 +304,7 @@
                             <div>
                                 @if($catproduct->giamgia)
                                     -{{$catproduct->giamgia}}%
-                                @else Mới
+                                @else New
                                 @endif
                             </div>
                         </div>
@@ -345,7 +348,7 @@
                             <img src="/upload/abc.png" alt="">
                         </div>
                         <div class="product__sale">
-                            <div>Mới</div>
+                            <div>New</div>
                         </div>
 
                         <div class="product__content">
@@ -390,7 +393,7 @@
                             <img src="/upload/abc.png" alt="">
                         </div>
                         <div class="product__sale">
-                            <div>Mới</div>
+                            <div>New</div>
                         </div>
 
                         <div class="product__content">
@@ -426,24 +429,24 @@
     </div>
 </div>
 
-<div class="banner">
+<!-- <div class="banner">
 
     <div class="row banner-top">
         <img class="col-md-4 col-sm-6" src="{{ asset('frontend/img/BG-1.jpg')}}" />
         <img class="col-md-4 col-sm-6" src="{{ asset('frontend/img/BG-2.jpg')}}" />
         <img class="col-md-4 col-sm-6" src="{{ asset('frontend/img/BG-3.jpg')}}" />
     </div>
-</div>
+</div> -->
 
-<!-- Con giống -->
+<!-- Breeder -->
 <div class="body">
 
     <div class="body__mainTitle d-flex align-items-center">
-        <h2>Con giống</h2>
+        <h2>Breeder</h2>
         <b>
             <div class="d-flex justify-content-center align-items-center ml-5" style="font-size: 26px;">
-                <div id="clickDog" class="text-secondary activeColor mr-3">Chó</div>
-                <div id="clickCat" class="text-secondary mr-3">Mèo</div>
+                <div id="clickDog" class="text-secondary activeColor mr-3">Dog</div>
+                <div id="clickCat" class="text-secondary mr-3">Cat</div>
             </div>
         </b>
 
@@ -462,7 +465,7 @@
                             <div>
                                 @if($choGiong->giamgia)
                                     -{{$choGiong->giamgia}}%
-                                @else Mới
+                                @else New
                                 @endif
                             </div>
                         </div>
@@ -510,7 +513,7 @@
                             <div>
                                 @if($meoGiong->giamgia)
                                     -{{$meoGiong->giamgia}}%
-                                @else Mới
+                                @else New
                                 @endif
                             </div>
                         </div>
@@ -547,11 +550,11 @@
 
 </div>
 
-<!-- Tất cả sản phẩm -->
+<!-- All products -->
 <div class="body">
 
     <div class="body__mainTitle">
-        <h2>TẤT CẢ SẢN PHẨM</h2>
+        <h2>ALL PRODUCTS</h2>
     </div>
 
     <div>
@@ -567,7 +570,7 @@
                             <div>
                                 @if($all->giamgia)
                                     -{{$all->giamgia}}%
-                                @else Mới
+                                @else New
                                 @endif
                             </div>
                         </div>
@@ -601,7 +604,7 @@
             @endforeach
         </div>
         <center style="margin-top: 30px;">
-            <a href="{{route('viewAll')}}" class="btn text-white" style="background: #ff4500;">Xem thêm</a>
+            <a href="{{route('viewAll')}}" class="btn text-white" style="background: #fac;">See more</a>
         </center>
     </div>
 

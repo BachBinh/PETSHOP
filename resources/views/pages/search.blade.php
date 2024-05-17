@@ -4,8 +4,8 @@
 <div class="body">
 
     <div class="body__mainTitle">
-        <h2>Từ khóa đã tìm kiếm: {{ $tukhoa }}</h2>
-    </div>    
+        <h2>Keywords searched: {{ $tukhoa }}</h2>
+    </div>
 
     <div>
         <div class="row">
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 </a>
-            </div>      
+            </div>
             @endforeach
         </div>
         <nav aria-label="Page navigation example">
@@ -74,7 +74,7 @@
                 </li>
             </ul>
         </nav>
-        
+
     </div>
 
 </div>

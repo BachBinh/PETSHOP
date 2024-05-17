@@ -2,11 +2,11 @@
 @section('content')
     <!--Main-->
     <div class="body" style="padding-top: 50px;">
-        <a class="buy_continute" href="{{URL::to('/')}}"><i class="fa fa-arrow-circle-left"></i> Trở lại mua hàng</a>
+        <a class="buy_continute" href="{{URL::to('/')}}"><i class="fa fa-arrow-circle-left"></i> Return to purchase</a>
         @if(session('success'))
             <div class="alert alert-success mt-3">
             {{ session('success') }}
-            </div> 
+            </div>
         @endif
             <div class="product_card mt-3">
                 <div class="product__details-img mr-2">
@@ -20,33 +20,32 @@
                             <img src="./img/dohop.jpg" onerror="this.onerror=null; this.src='https://i.pinimg.com/originals/ae/4c/9e/ae4c9ea2edf887f6ad1e4e63cfae05b0.jpg'" class="small-imgg" alt="">
                     </div> --}}
                 </div>
-    
+
                 <div class="product__details-info">
                     <h3 style="margin-top: unset; line-height: unset;">{{ $sanpham->tensp }}</h3>
-                    <div class="short-des">
+                    <!-- <div class="short-des">
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam sit aliquid debitis voluptates ducimus, quasi iusto nam quaerat eius quidem.
-    
-                    </div><hr />
-    
+                    </div><hr /> -->
+
                     <div class="product__pride">
                         <div class="product__pride-oldPride" style="font-size: 20px; text-align: start;">
                             <span class="Price">
                                 <bdi>
-                                    {{ number_format($sanpham->giasp, 0, ',', '.') }}  
+                                    {{ number_format($sanpham->giasp, 0, ',', '.') }}
                                     <span class="currencySymbol">₫</span>
                                 </bdi>
                             </span>
                         </div>
                         <div class="product__pride-newPride" style="font-size: 40px; text-align: start;">
                             <span class="Price">
-                                <bdi>{{ number_format($sanpham->giakhuyenmai, 0, ',', '.') }}  
+                                <bdi>{{ number_format($sanpham->giakhuyenmai, 0, ',', '.') }}
                                     <span class="currencySymbol">₫</span>
                                 </bdi>
                             </span>
                         </div>
-    
+
                     </div>
-    
+
                     <form action="" method="POST">
                         <!--
                             <div class="number">
@@ -57,66 +56,66 @@
                                 </div>
                             </div>
                         -->
-    
+
                         <div class="number">
                             <span>
-                                Số lượng
+                                Quantity
                                 <span class="number__count">
-                                    {{$sanpham->soluong}}    
+                                    {{$sanpham->soluong}}
                                 </span>
                             </span>
-    
+
                         </div>
-    
+
                         <div class="product__cart">
                             <a href="{{ route('add_to_cart', $sanpham->id_sanpham) }}" class="product__cart-add" name="add-to-cart">
-                                Thêm vào giỏ hàng
+                                Add to cart
                             </a>
-                            <a href="{{ route('add_go_to_cart', $sanpham->id_sanpham) }}" class="product__cart-buy" name="buy-now">Mua ngay</a>
+                            <a href="{{ route('add_go_to_cart', $sanpham->id_sanpham) }}" class="product__cart-buy" name="buy-now">Buy right now!</a>
                         </div>
-    
+
                     </form>
                 </div>
             </div>
-    
+
         <!--Mô tả sản phẩm-->
         <div class="body__mainTitle">
-            <h2>MÔ TẢ SẢN PHẨM</h2>
+            <h2>PRODUCT DESCRIPTION</h2>
         </div>
-            {{$sanpham->mota}}    
+            {{$sanpham->mota}}
         <hr />
-    
+
         <!--Bình luận sản phẩm-->
         <div class="body__mainTitle">
-            <h2>BÌNH LUẬN</h2>
+            <h2>COMMENT</h2>
         </div>
         <div>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex">
                     <img src="{{ asset('frontend/img/user.jpg')}}" width="45" height="45" style="border-radius: 50%;" />
                     <div class="pl-3">
-                        <b>Nguyen van a</b>
-                        <div style="line-height: 30px;">san pha mdung dc</div>
-                        <div>22/01/2022</div>
+                        <b>Bach Phuong Binh</b>
+                        <div style="line-height: 30px;">Good Product!</div>
+                        <div>30/04/2024</div>
                     </div>
                 </div>
-               
+
             </div>
-    
+
             <hr />
         </div>
-    
+
         <div class="d-flex justify-content-between align-items-center">
-            <div>Nội dung</div>
+            <div>Content</div>
             <div class="d-flex align-items-center">
                 <input type="hidden" id="rating" name="rating" value="0" />
             </div>
         </div>
         <textarea name="content" class="form-control" style="outline: none; margin-bottom: 5px;"></textarea>
         <div>
-    
+
             <input class="btn btn-maincolor" type="submit" value="Gửi" />
-    
+
             <input data-val="true"
                    data-val-number="The field id_sp must be a number."
                    data-val-required="The id_sp field is required."
@@ -124,12 +123,12 @@
                    name="id_sp"
                    type="hidden"
                    value="0" />
-    
+
         </div>
     <hr>
         <!-- Sản phẩm ngẫu nhiên -->
         <div class="body__mainTitle">
-            <h2>CÓ THỂ BẠN CŨNG THÍCH</h2>
+            <h2>YOU MAY ALSO LIKE</h2>
         </div>
         <div class="row">
             @foreach($randoms as $random)
@@ -143,7 +142,7 @@
                             <div>
                                 @if($random->giamgia)
                                     -{{$random->giamgia}}%
-                                @else Mới
+                                @else New
                                 @endif
                             </div>
                         </div>
@@ -152,7 +151,6 @@
                             <div class="product__title">
                                 {{$random->tensp}}
                             </div>
-
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>

@@ -52,19 +52,19 @@
     @if(session('success'))
         <div class="alert alert-success mt-3">
         {{ session('success') }}
-        </div> 
+        </div>
     @endif
 
     <table id="cart" class="table table-hover table-condensed">
         <thead>
         <tr>
-            <th>Ảnh sp</th>
-            <th>Tên sp</th>
-            <th>Giá gốc</th>
-            <th>Giảm giá</th>
-            <th>Giá khuyến mại</th>
-            <th>Số lượng</th>
-            <th>Tổng tiền</th>
+            <th>Image product</th>
+            <th>Product's name</th>
+            <th>Cost</th>
+            <th>Discount</th>
+            <th>Promotional price</th>
+            <th>Quantity</th>
+            <th>Total</th>
         </tr>
         </thead>
             <tbody>
@@ -78,7 +78,7 @@
                         <td>
                             <div>{{ $details['tensp'] }}</div>
                             <button class="btn btn-danger btn-sm cart_remove mt-2"><i class="fa fa-trash-o"></i> Xóa</button>
-                        </td>  
+                        </td>
                         <td data-th="Price">{{ $details['giasp'] }}</td>
                         <td data-th="Price">{{ $details['giamgia'] }}%</td>
                         <td data-th="Subtotal" class="text-center">{{ $details['giakhuyenmai']}}đ</td>
@@ -99,15 +99,15 @@
         <tr>
         <td colspan="7" class="text-right">
             <h3 class="d-flex justify-content-end align-items-center">
-                Tổng thanh toán &nbsp;<div class="text-danger" style="font-size: 40px;">{{ number_format($total, 0, ',', '.') }}đ</div>
+                Total payment   &nbsp;<div class="text-danger" style="font-size: 40px;">{{ number_format($total, 0, ',', '.') }}đ</div>
             </h3>
         </td>
         </tr>
 
         <tr>
         <td colspan="7" class="text-right">
-        <a href="{{ url('/') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Tiếp tục mua sắm</a>
-        <button class="btn btn-success"><a class="text-white" href="{{route('checkout')}}">Mua hàng</a></button>
+        <a href="{{ url('/') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Continue shopping</a>
+        <button class="btn btn-success"><a class="text-white" href="{{route('checkout')}}">Order</a></button>
         </td>
         </tr>
 
@@ -138,13 +138,13 @@ decreaseValues.forEach(function(decreaseValue) {
         })
 
         var ele = $(this);
-        
+
         $.ajax({
             url: '{{ route('update_cart') }}',
             method: "patch",
             data: {
-                _token: '{{ csrf_token() }}', 
-                id: ele.parents("tr").attr("data-id"), 
+                _token: '{{ csrf_token() }}',
+                id: ele.parents("tr").attr("data-id"),
                 quantity: ele.parents("tr").find(".quantity").val()
             },
             success: function (response) {
@@ -167,15 +167,15 @@ increaseValues.forEach(function(increaseValue) {
             value++;
             quantity.value = value;
         })
-    
+
     var ele1 = $(this);
-    
+
     $.ajax({
         url: '{{ route('update_cart') }}',
         method: "patch",
         data: {
-            _token: '{{ csrf_token() }}', 
-            id: ele1.parents("tr").attr("data-id"), 
+            _token: '{{ csrf_token() }}',
+            id: ele1.parents("tr").attr("data-id"),
             quantity: ele1.parents("tr").find(".quantity").val()
         },
         success: function (response) {
@@ -208,8 +208,8 @@ var cart_updates = document.querySelectorAll('.cart_update');
             url: '{{ route('update_cart') }}',
             method: "patch",
             data: {
-                _token: '{{ csrf_token() }}', 
-                id: ele.parents("tr").attr("data-id"), 
+                _token: '{{ csrf_token() }}',
+                id: ele.parents("tr").attr("data-id"),
                 quantity: ele.parents("tr").find(".quantity").val()
             },
             success: function (response) {
@@ -231,7 +231,7 @@ cart_removes.forEach(function(cart_remove) {
                 url: '{{ route('remove_from_cart') }}',
                 method: "DELETE",
                 data: {
-                    _token: '{{ csrf_token() }}', 
+                    _token: '{{ csrf_token() }}',
                     id: ele3.parents("tr").attr("data-id")
                 },
                 success: function (response) {

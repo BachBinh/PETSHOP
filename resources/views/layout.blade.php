@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý cửa hàng thú cưng</title>
-    <link rel="shortcut icon" type="image/png" href="{{ asset('frontend/img/logo.jpg')}}"/>
+    <title>Pet store management</title>
+    <link rel="shortcut icon" type="image/png" href="{{ asset('frontend/img/logo1.jpg')}}"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
@@ -21,23 +21,23 @@
 </head>
 <body>
     <div class="header">
-            
+
         <div class="navbar">
             <div class="navbar__left">
                 <a href="{{ URL::to('/')}}" class="navbar__logo">
-                    <img src="{{ asset('frontend/img/logo.jpg') }}" alt="">
+                    <img src="{{ asset('frontend/img/logo1.png') }}" alt="">
                 </a>
 
                 <div class="navbar__menu">
                     <i id="bars" class="fa fa-bars" aria-hidden="true"></i>
                     <ul>
-                        <li><a href="{{ URL::to('/')}}">Trang chủ</a></li>
-                        <li><a href="{{ URL::to('/congiong')}}">Con giống</a></li>
+                        <li><a href="{{ URL::to('/')}}">Home</a></li>
+                        <li><a href="{{ URL::to('/congiong')}}">Breeder</a></li>
                         <li>
-                            <a href="{{ URL::to('/services')}}">Dịch vụ</a>
+                            <a href="{{ URL::to('/services')}}">Service</a>
                         </li>
                         <li>
-                            <a href="{{ URL::to('/donhang')}}">Đơn hàng</a>
+                            <a href="{{ URL::to('/donhang')}}">Order</a>
                         </li>
                     </ul>
                 </div>
@@ -46,7 +46,7 @@
 
             <div class="navbar__center">
                 <form action="{{route('search')}}" method="GET" class="navbar__search">
-                    <input type="text" value="" placeholder="Nhập để tìm kiếm..." name="tukhoa" class="search" required>
+                    <input type="text" value="" placeholder="Search..." name="tukhoa" class="search" required>
                     <i class="fa fa-search" id="searchBtn"></i>
                 </form>
             </div>
@@ -71,15 +71,15 @@
                         <a href="{{ URL::to('login')}}"><i class="fa fa-user"></i> </a>
                     </div>
                 @endif
-            
+
                 <a href="{{ route('cart') }}" class="navbar__shoppingCart">
                     <img src="{{ asset('frontend/img/shopping-cart.svg')}}" style="width: 24px;" alt="">
-                    
+
                     @if (session('cart'))
                         <span>{{ count((array) session('cart')) }}</span>
                     @else
                         <span>0</span>
-                    
+
                     @endif
                 </a>
             </div>
@@ -95,7 +95,7 @@
     <footer>
         <div class="footer">
             <div class="footer__title">
-                <span>Liên hệ</span>
+                <span>Contact</span>
                 <div class="footer__social">
                     <a href="facebook.com/trieuetam" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-github"></i></a>
@@ -103,21 +103,21 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="footer__info">
 
             <div class="footer__info-content">
-                <h3>Giới thiệu</h3>
-                <p>Website quản lý, mua bán thú cưng</p>
+                <h3>Introduce</h3>
+                <p>Our platform is a comprehensive website dedicated to the management and trading pets, offering a seamless and user-friendly experience for pet enthusiasts to buy and adopt pets</p>
             </div>
 
 
 
             <div class="footer__info-content">
-                <h3>Liên hệ</h3>
-                <p>Địa chỉ: 561 Su Van Hanh StreetWard 13, District 10</p>
-                <p>Email: trieuetam@gmail.com</p>
-                <p>Sđt: 123456789</p>
+                <h3>Contact</h3>
+                <p>Address: 2, Nguyen Thi Thap Street, Tan Quy Ward, District 7, Ho Chi Minh city</p>
+                <p>Email: petshop@gmail.com</p>
+                <p>Sđt: 0123456789</p>
             </div>
 
             <div class="footer__info-content">
@@ -128,10 +128,10 @@
         </div>
 
         <div class="footer__copyright">
-            <center> 2022 All rights reserved.</center>
+            <center> 2024 All rights reserved.</center>
         </div>
     </footer>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
         //Slider using Slick
@@ -182,7 +182,7 @@
             ]
         });
     </script>
-    
+
     <script src="{{ asset('frontend/script/script.js') }}"></script>
 
 </body>

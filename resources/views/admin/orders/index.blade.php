@@ -1,7 +1,7 @@
 @extends('admin_layout')
 @section('admin_content')
 
-<h1 class="h3 mb-3"><strong>Danh sách đơn hàng</strong></h1>
+<h1 class="h3 mb-3"><strong>List order</strong></h1>
 
 <div class="">
   @if(session()->has('success'))
@@ -17,11 +17,11 @@
     <thead>
       <tr>
         <th>ID</th>
-        <th>Phương thức tt</th>
-        <th>Ngày đặt</th>
-        <th>Ngày giao</th>
-        <th>Trạng thái</th>
-        <th>Địa chỉ giao hàng</th>
+        <th>Payment method</th>
+        <th>Order Date</th>
+        <th>Delivery Date</th>
+        <th>Status</th>
+        <th>Delivery Address</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -47,11 +47,11 @@
         <td>
           @if($order->trangthai == 'đang xử lý')
             <span class="badge bg-primary">{{$order->trangthai}}</span>
-          @elseif ($order->trangthai == 'chờ lấy hàng')
+          @elseif ($order->trangthai == 'waiting for delivery')
             <span class="badge bg-warning">{{$order->trangthai}}</span>
-          @elseif ($order->trangthai == 'đang giao hàng')
+          @elseif ($order->trangthai == 'delivering')
             <span class="badge bg-success">{{$order->trangthai}}</span>
-          @elseif ($order->trangthai == 'giao thành công')
+          @elseif ($order->trangthai == 'delivered successfully')
             <span class="badge bg-success">{{$order->trangthai}}</span>
           @else
             <span class="badge bg-danger">{{$order->trangthai}}</span>

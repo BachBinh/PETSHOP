@@ -42,8 +42,8 @@
         <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
             <i class="checkmark">✓</i>
         </div>
-            <h1 class="checkout_order">Đặt hàng thành công</h1> 
-            <p class="checkmark_content">Chúng tôi đang trên đường giao đến bạn<br/>hãy để ý đơn hàng!</p>
+            <h1 class="checkout_order">Order Success</h1>
+            <p class="checkmark_content">We are on our way to deliver to you<br/>Please pay attention to your order!</p>
         </div>
     </div>
 </div>
