@@ -95,7 +95,7 @@
     <footer>
         <div class="footer">
             <div class="footer__title">
-                <span>Liên hệ</span>
+                <span>Contact</span>
                 <div class="footer__social">
                     <a href="facebook.com/trieuetam" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-github"></i></a>
@@ -107,17 +107,17 @@
         <div class="footer__info">
 
             <div class="footer__info-content">
-                <h3>Giới thiệu</h3>
-                <p>Website quản lý, mua bán thú cưng</p>
+                <h3>Introduce</h3>
+                <p>Our platform is a comprehensive website dedicated to the management and trading of pets, offering a seamless and user-friendly experience for pet enthusiasts to buy, sell, and adopt pets</p>
             </div>
 
 
 
             <div class="footer__info-content">
-                <h3>Liên hệ</h3>
-                <p>Địa chỉ: 561 Su Van Hanh StreetWard 13, District 10</p>
-                <p>Email: trieuetam@gmail.com</p>
-                <p>Sđt: 123456789</p>
+                <h3>Contact</h3>
+                <p>Address: 19 Nguyen Huu Tho,Tan Phong Ward, District 7, Ho Chi Minh city</p>
+                <p>Email: bachphuongbinh@gmail.com</p>
+                <p>Sđt: 0123456789</p>
             </div>
 
             <div class="footer__info-content">
@@ -128,7 +128,7 @@
         </div>
 
         <div class="footer__copyright">
-            <center> 2022 All rights reserved.</center>
+            <center> 2024 All rights reserved.</center>
         </div>
     </footer>
 
