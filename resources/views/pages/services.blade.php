@@ -14,14 +14,13 @@
     <div class="post-wrapper">
         <div class="post">
             <h1 style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);" class="text-white mb-5">
-                Dịch vụ chăm súc thú cưng tại PetStore
-
+                Pet care service at Pet Store
                 <div class="row mt-5">
                     <div class="col-lg-4 col-md-4">
                         <div class="mainServices">
                             <i class="fa fa-paw"></i>
                             <div class="mainServices__content">
-                                <h3>Chăm Sóc</h3>
+                                <h3>Take care</h3>
                             </div>
                         </div>
                     </div>
@@ -30,7 +29,7 @@
                         <div class="mainServices">
                             <i class="fa fa-cutlery"></i>
                             <div class="mainServices__content">
-                                <h3>Ăn Uống</h3>
+                                <h3>Diet</h3>
                             </div>
                         </div>
                     </div>
@@ -39,14 +38,14 @@
                         <div class="mainServices">
                             <i class="fa fa-gavel"></i>
                             <div class="mainServices__content">
-                                <h3>Đồ chơi & Phụ kiện</h3>
+                                <h3>Toys & Accessories</h3>
                             </div>
                         </div>
                     </div>
                 </div>
 
             </h1>
-            <img src="{{ asset('frontend/img/banner_5-scaled.jpg')}}" alt="">
+            <img src="{{ asset('frontend/img/banner_ser_6.jpeg')}}" alt="">
         </div>
     </div>
 
@@ -72,14 +71,14 @@
 
 <div class="body">
     <div class="container-fluid" style="padding: 0!important;">
-        <div style="background-image: url('frontend/img/bg_7.jpg')" class="service-banner">
+        <div style="background-image: url('frontend/img/banner_ser_7.jpeg')" class="service-banner">
             <div class="boxservice">
                 <h3 class="h1-title">
-                    PetStore CHĂM SÓC TOÀN DIỆN, “THIÊN ĐƯỜNG" CỦA THÚ CƯNG!
+                PET STORE: Your One-Stop Shop for Premium Pet Products and Services!
                 </h3>
-                <p>Với mong muốn được trở thành ngôi nhà thứ hai của thú cưng, Petstore mang đến những dịch vụ lẫn sản phẩm cần thiết nhất mà mọi người bạn dễ thương này.</p>
+                <p>"With the aspiration of becoming a second home for pets, Petstore offers a comprehensive range of essential services and products tailored to meet the needs of every beloved furry friend."</p>
 
-                <button class="btn btn-danger mt-5 modal-toggle">Xem thêm!</button>
+                <button class="btn btn-danger mt-5 modal-toggle">See more!</button>
 
             </div>
         </div>
@@ -88,44 +87,42 @@
     <div class="row">
         <div class="col-lg-4" style="padding: 15px!important;">
             <div style="background-color: #2885BA" class="service-list__content-box">
-                <img src="{{ asset('frontend/img/svmeo.jpg')}}" alt="">
+                <img src="{{ asset('frontend/img/banner_ser_1.jpeg')}}" alt="">
                 <h3 class="h1-title">
-                    1. PET STORE - NƠI CHĂM SÓC THÚ CƯNG CHẤT LƯỢNG!
+                    1. PET STORE - A PLACE FOR QUALITY PET CARE!
                 </h3>
-
                 <p>
-                    Những chuyến du lịch hay công tác dài ngày khiến bạn cảm thấy lo lắng khi phải gửi gắm bé yêu cho ai đó chăm nom hộ?
-                    Khách sạn thú cưng hiện đại sẽ giúp chủ nuôi hoàn toàn yên tâm khi “đặt phòng" cho bé!
+                    Long trips or business trips make you feel worried about having to leave your baby with someone to take care of?
+                     Modern pet hotels will help owners feel completely secure when "booking a room" for their babies!
                 </p>
 
             </div>
         </div>
         <div class="col-lg-4" style="padding: 15px!important;">
             <div style="background-color: #B56256" class="service-list__content-box">
-                <img src="{{ asset('frontend/img/svmeo2.jpg')}}" alt="">
+                <img src="{{ asset('frontend/img/banner_ser_2.jpeg')}}" alt="">
                 <h3 class="h1-title">
-                    2. PET STORE - NƠI CUNG CẤP THỨC ĂN, CÁT VỆ SINH,... CHẤT LƯỢNG NHẤT!
+                    2. PET STORE - WHERE TO SUPPLY THE BEST QUALITY FOOD, CLEANING SAND,...!
                 </h3>
 
                 <p>
-                    Tại Pet Store, chúng tôi cung cấp mọi nhu cầu mà thú cưng cần với giá cả hợp lý và chất lượng hàng đầu!
+                    At Pet Store, we provide everything your pet needs at reasonable prices and top quality!
                 </p>
-
                 <p>
-                    Đa dạng món ăn hấp dẫn từ các nhãn hiệu lớn trong và ngoài nước, mùi vị hấp dẫn.
+                    A variety of attractive dishes from major domestic and foreign brands with attractive flavors.
                 </p>
             </div>
         </div>
         <div class="col-lg-4" style="padding: 15px!important;">
             <div style="background-color: #5C9CCA" class="service-list__content-box">
-                <img src="{{ asset('frontend/img/svmeo3.jpg')}}" alt="">
+                <img src="{{ asset('frontend/img/banner_ser_3.jpeg')}}" alt="">
                 <h3 class="h1-title">
-                    3. CUNG CẤP CÁC DỊCH VỤ SPA, TẮM RỬA,... CHẤT LƯỢNG NHẤT!
+                    3. PROVIDING THE BEST QUALITY SPA, BATHING,... SERVICES!
                 </h3>
 
                 <p>
-                    Những chuyến du lịch hay công tác dài ngày khiến bạn cảm thấy lo lắng khi phải gửi gắm bé yêu cho ai đó chăm nom hộ?
-                    Khách sạn thú cưng hiện đại sẽ giúp chủ nuôi hoàn toàn yên tâm khi “đặt phòng" cho bé!
+                    Long trips or business trips make you feel worried about having to leave your baby with someone to take care of?
+                    Modern pet hotels will help owners feel completely secure when "booking a room" for their babies!
                 </p>
             </div>
         </div>
@@ -135,7 +132,7 @@
     <div class="service-text mb30">
         <div class="service-text__content">
             <h2 class="h2-title">
-            </h2><h2 class="h2-title">Chăm sóc toàn diện, tận tâm và xuất phát từ tình yêu với thú cưng chính là tôn chỉ của mọi dịch vụ luôn sẵn sàng đón tiếp quý khách!</h2>
+            </h2><h2 class="h2-title">Comprehensive care, dedication and love for pets is the principle of every service that is always ready to welcome you!</h2>
         </div>
 
         <div class="d-flex justify-content-center align-items-center">
