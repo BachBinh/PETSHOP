@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý cửa hàng thú cưng</title>
+    <title>Pet store management</title>
     <link rel="shortcut icon" type="image/png" href="{{ asset('frontend/img/logo.jpg')}}"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -21,23 +21,23 @@
 </head>
 <body>
     <div class="header">
-            
+
         <div class="navbar">
             <div class="navbar__left">
                 <a href="{{ URL::to('/')}}" class="navbar__logo">
-                    <img src="{{ asset('frontend/img/logo.jpg') }}" alt="">
+                    <img src="{{ asset('frontend/img/logo1.png') }}" alt="">
                 </a>
 
                 <div class="navbar__menu">
                     <i id="bars" class="fa fa-bars" aria-hidden="true"></i>
                     <ul>
-                        <li><a href="{{ URL::to('/')}}">Trang chủ</a></li>
-                        <li><a href="{{ URL::to('/congiong')}}">Con giống</a></li>
+                        <li><a href="{{ URL::to('/')}}">Home</a></li>
+                        <li><a href="{{ URL::to('/congiong')}}">Breeder</a></li>
                         <li>
-                            <a href="{{ URL::to('/services')}}">Dịch vụ</a>
+                            <a href="{{ URL::to('/services')}}">Service</a>
                         </li>
                         <li>
-                            <a href="{{ URL::to('/donhang')}}">Đơn hàng</a>
+                            <a href="{{ URL::to('/donhang')}}">Order</a>
                         </li>
                     </ul>
                 </div>
@@ -46,7 +46,7 @@
 
             <div class="navbar__center">
                 <form action="{{route('search')}}" method="GET" class="navbar__search">
-                    <input type="text" value="" placeholder="Nhập để tìm kiếm..." name="tukhoa" class="search" required>
+                    <input type="text" value="" placeholder="Search..." name="tukhoa" class="search" required>
                     <i class="fa fa-search" id="searchBtn"></i>
                 </form>
             </div>
@@ -71,15 +71,15 @@
                         <a href="{{ URL::to('login')}}"><i class="fa fa-user"></i> </a>
                     </div>
                 @endif
-            
+
                 <a href="{{ route('cart') }}" class="navbar__shoppingCart">
                     <img src="{{ asset('frontend/img/shopping-cart.svg')}}" style="width: 24px;" alt="">
-                    
+
                     @if (session('cart'))
                         <span>{{ count((array) session('cart')) }}</span>
                     @else
                         <span>0</span>
-                    
+
                     @endif
                 </a>
             </div>
@@ -103,7 +103,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="footer__info">
 
             <div class="footer__info-content">
@@ -131,7 +131,7 @@
             <center> 2022 All rights reserved.</center>
         </div>
     </footer>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
         //Slider using Slick
@@ -182,7 +182,7 @@
             ]
         });
     </script>
-    
+
     <script src="{{ asset('frontend/script/script.js') }}"></script>
 
 </body>
