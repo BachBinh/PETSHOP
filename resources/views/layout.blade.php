@@ -108,7 +108,7 @@
 
             <div class="footer__info-content">
                 <h3>Introduce</h3>
-                <p>Our platform is a comprehensive website dedicated to the management and trading of pets, offering a seamless and user-friendly experience for pet enthusiasts to buy, sell, and adopt pets</p>
+                <p>Our platform is a comprehensive website dedicated to the management and trading pets, offering a seamless and user-friendly experience for pet enthusiasts to buy and adopt pets</p>
             </div>
 
 

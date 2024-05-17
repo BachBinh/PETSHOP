@@ -83,7 +83,7 @@
         </div>
     </div>
 </div>
-
+<!--
 <div class="banner">
     <div class="body__mainTitle">
         <h2>Our services</h2>
@@ -115,7 +115,7 @@
         </div>
 
     </div>
-</div>
+</div> -->
 
 <!-- Products for dogs -->
 <div class="body">
@@ -270,11 +270,11 @@
     </div>
 </div>
 
-<div class="banner">
+<!-- <div class="banner">
     <div class="banner-top">
         <img src="{{ asset('frontend/img/BG-2.jpg')}}" />
     </div>
-</div>
+</div> -->
 
 <!-- Products for cats -->
 <div class="body">
@@ -429,14 +429,14 @@
     </div>
 </div>
 
-<div class="banner">
+<!-- <div class="banner">
 
     <div class="row banner-top">
         <img class="col-md-4 col-sm-6" src="{{ asset('frontend/img/BG-1.jpg')}}" />
         <img class="col-md-4 col-sm-6" src="{{ asset('frontend/img/BG-2.jpg')}}" />
         <img class="col-md-4 col-sm-6" src="{{ asset('frontend/img/BG-3.jpg')}}" />
     </div>
-</div>
+</div> -->
 
 <!-- Breeder -->
 <div class="body">
